@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KPI & Reports</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef1ff;
+            color: #243b80;
+            padding: 30px 5%;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #293b91;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #54709b;
+            margin-bottom: 35px;
+        }
+
+
+        /* ==========================================
+           BACK TO DASHBOARD
+        =========================================== */
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #6266f5;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background: #4d52e8;
+        }
+
+
+        /* ==========================================
+           KPI CARDS
+        =========================================== */
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background: white;
+            border-left: 6px solid #6266f5;
+            border-radius: 18px;
+            padding: 25px;
+            min-height: 190px;
+
+            box-shadow:
+                0 8px 20px rgba(70, 80, 180, 0.12);
+        }
+
+        .kpi-card h2 {
+            color: #293b91;
+            font-size: 21px;
+            margin-bottom: 18px;
+        }
+
+        .kpi-value {
+            font-size: 34px;
+            font-weight: bold;
+            color: #293b91;
+            margin-bottom: 10px;
+        }
+
+        .kpi-card p {
+            color: #54709b;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+
+        /* ==========================================
+           SECTIONS
+        =========================================== */
+
+        .section {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+
+            box-shadow:
+                0 8px 20px rgba(70, 80, 180, 0.12);
+        }
+
+        .section h2 {
+            color: #293b91;
+            margin-bottom: 22px;
+        }
+
+
+        /* ==========================================
+           TABLE
+        =========================================== */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #eef1ff;
+            color: #293b91;
+            padding: 14px;
+            text-align: left;
+        }
+
+        td {
+            padding: 14px;
+            color: #54709b;
+            border-bottom: 1px solid #e1e5f5;
+        }
+
+        .achieved {
+            color: #00883e;
+            font-weight: bold;
+        }
+
+        .review {
+            color: #c35b00;
+            font-weight: bold;
+        }
+
+
+        /* ==========================================
+           RECOMMENDATIONS
+        =========================================== */
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            color: #54709b;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* ==========================================
+           RESPONSIVE
+        =========================================== */
+
+        @media (max-width: 950px) {
+
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         BACK TO DASHBOARD
+    =========================================== -->
+
+    <a href="{{ url_for('home') }}" class="back-button">
+        ← Back to Dashboard
+    </a>
+
+
+    <!-- ==========================================
+         PAGE TITLE
+    =========================================== -->
+
+    <h1>📈 KPI & Reports</h1>
+
+    <p class="subtitle">
+        Evaluation and reporting of Telecom Data Governance initiatives.
+    </p>
+
+
+    <!-- ==========================================
+         KPI CARDS
+    =========================================== -->
+
+    <div class="kpi-grid">
+
+
+        <!-- DATA QUALITY -->
+
+        <div class="kpi-card">
+
+            <h2>📊 Data Quality</h2>
+
+            <div class="kpi-value">
+                92%
+            </div>
+
+            <p>
+                Overall data quality based on
+                completeness, validity and duplicate checks.
+            </p>
+
+        </div>
+
+
+        <!-- SECURITY -->
+
+        <div class="kpi-card">
+
+            <h2>🔐 Security Compliance</h2>
+
+            <div class="kpi-value">
+                95%
+            </div>
+
+            <p>
+                Percentage of implemented security
+                controls and access policies.
+            </p>
+
+        </div>
+
+
+        <!-- RISK -->
+
+        <div class="kpi-card">
+
+            <h2>⚠️ Risk Mitigation</h2>
+
+            <div class="kpi-value">
+                90%
+            </div>
+
+            <p>
+                Percentage of identified risks with
+                mitigation controls.
+            </p>
+
+        </div>
+
+
+        <!-- GOVERNANCE -->
+
+        <div class="kpi-card">
+
+            <h2>🛡️ Governance Compliance</h2>
+
+            <div class="kpi-value">
+                94%
+            </div>
+
+            <p>
+                Compliance with governance policies
+                and procedures.
+            </p>
+
+        </div>
+
+
+        <!-- LIFECYCLE -->
+
+        <div class="kpi-card">
+
+            <h2>🔄 Lifecycle Compliance</h2>
+
+            <div class="kpi-value">
+                91%
+            </div>
+
+            <p>
+                Compliance with retention,
+                archival and disposal procedures.
+            </p>
+
+        </div>
+
+
+        <!-- AUDIT -->
+
+        <div class="kpi-card">
+
+            <h2>📋 Audit Readiness</h2>
+
+            <div class="kpi-value">
+                93%
+            </div>
+
+            <p>
+                Readiness based on documentation,
+                logs and governance controls.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         KPI EVALUATION
+    =========================================== -->
+
+    <div class="section">
+
+        <h2>📊 KPI Evaluation</h2>
+
+        <table>
+
+            <tr>
+
+                <th>KPI</th>
+
+                <th>Target</th>
+
+                <th>Current</th>
+
+                <th>Status</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Data Quality</td>
+
+                <td>90%</td>
+
+                <td>92%</td>
+
+                <td class="achieved">
+                    Achieved
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Security Compliance</td>
+
+                <td>90%</td>
+
+                <td>95%</td>
+
+                <td class="achieved">
+                    Achieved
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Risk Mitigation</td>
+
+                <td>90%</td>
+
+                <td>90%</td>
+
+                <td class="achieved">
+                    Achieved
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Governance Compliance</td>
+
+                <td>95%</td>
+
+                <td>94%</td>
+
+                <td class="review">
+                    Needs Review
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Lifecycle Compliance</td>
+
+                <td>90%</td>
+
+                <td>91%</td>
+
+                <td class="achieved">
+                    Achieved
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- ==========================================
+         KPI DATA COLLECTION
+    =========================================== -->
+
+    <div class="section">
+
+        <h2>📥 KPI Data Collection</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Data Source</th>
+
+                <th>Metric</th>
+
+                <th>Frequency</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Telecom Customer Dataset
+                </td>
+
+                <td>
+                    Missing values and duplicate records
+                </td>
+
+                <td>
+                    Monthly
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Security Logs
+                </td>
+
+                <td>
+                    Authentication and access events
+                </td>
+
+                <td>
+                    Daily
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Risk Register
+                </td>
+
+                <td>
+                    Open risks and mitigation status
+                </td>
+
+                <td>
+                    Monthly
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Governance Reviews
+                </td>
+
+                <td>
+                    Policy and compliance status
+                </td>
+
+                <td>
+                    Quarterly
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- ==========================================
+         GOVERNANCE REPORTING
+    =========================================== -->
+
+    <div class="section">
+
+        <h2>📄 Governance Reporting</h2>
+
+        <p style="color:#54709b; line-height:1.7; font-size:17px;">
+
+            KPI results are reviewed periodically to identify
+            data quality problems, security weaknesses,
+            compliance gaps and operational risks.
+
+        </p>
+
+        <br>
+
+        <p style="color:#54709b; line-height:1.7; font-size:17px;">
+
+            Governance reports can be maintained for management
+            review, internal audits and continuous improvement.
+
+        </p>
+
+    </div>
+
+
+    <!-- ==========================================
+         RECOMMENDATIONS
+    =========================================== -->
+
+    <div class="section">
+
+        <h2>💡 Recommendations</h2>
+
+        <ul>
+
+            <li>
+                Perform regular data quality validation.
+            </li>
+
+            <li>
+                Review user access permissions periodically.
+            </li>
+
+            <li>
+                Monitor security and audit logs.
+            </li>
+
+            <li>
+                Review identified risks and mitigation controls.
+            </li>
+
+            <li>
+                Conduct periodic data retention and archival reviews.
+            </li>
+
+            <li>
+                Evaluate governance KPIs regularly and document
+                corrective actions.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- ==========================================
+         BACK TO DASHBOARD
+    =========================================== -->
+
+    <a href="{{ url_for('home') }}" class="back-button">
+        ← Back to Dashboard
+    </a>
+
+
+</body>
+
+</html>
