@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Governance Management</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            color: #1e293b;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #4f46e5);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 10px 18px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .back:hover {
+            background: #3730a3;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.12);
+            border-left: 5px solid #4f46e5;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #312e81;
+        }
+
+        .card p {
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .card ul {
+            line-height: 1.9;
+            color: #475569;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #dcfce7;
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .policy-table th {
+            background: #4f46e5;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .policy-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .policy-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        @media (max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Governance Management</h1>
+
+    <p>
+        Telecom Data Governance Strategy and Planning
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <a href="/" class="back">
+        ← Back to Dashboard
+    </a>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h2>Governance Framework</h2>
+
+            <p>
+                The governance framework defines the policies,
+                responsibilities, processes and controls used to
+                manage telecom data throughout the organization.
+            </p>
+
+            <span class="status">
+                Active
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Governance Objectives</h2>
+
+            <ul>
+
+                <li>Ensure data accuracy and consistency</li>
+
+                <li>Protect sensitive telecom information</li>
+
+                <li>Define data ownership and responsibility</li>
+
+                <li>Improve regulatory compliance</li>
+
+                <li>Support secure data usage</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Data Ownership</h2>
+
+            <p>
+                Data owners are responsible for defining data
+                requirements, access permissions, quality standards
+                and appropriate usage of organizational data.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Data Stewardship</h2>
+
+            <p>
+                Data stewards monitor data quality, maintain
+                governance policies and coordinate data-related
+                activities between business and technical teams.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="card" style="margin-top:20px;">
+
+        <h2>Governance Policies</h2>
+
+        <table class="policy-table">
+
+            <tr>
+                <th>Policy</th>
+                <th>Purpose</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Data Quality Policy</td>
+                <td>Maintain accurate and consistent telecom data</td>
+                <td>Active</td>
+            </tr>
+
+            <tr>
+                <td>Data Security Policy</td>
+                <td>Protect data from unauthorized access</td>
+                <td>Active</td>
+            </tr>
+
+            <tr>
+                <td>Data Access Policy</td>
+                <td>Control user access to telecom information</td>
+                <td>Active</td>
+            </tr>
+
+            <tr>
+                <td>Data Retention Policy</td>
+                <td>Define how long data should be retained</td>
+                <td>Planned</td>
+            </tr>
+
+            <tr>
+                <td>Data Backup Policy</td>
+                <td>Protect data through regular backups</td>
+                <td>Planned</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <div class="card" style="margin-top:20px;">
+
+        <h2>Governance Principles</h2>
+
+        <ul>
+
+            <li>Accountability</li>
+
+            <li>Transparency</li>
+
+            <li>Data Quality</li>
+
+            <li>Security</li>
+
+            <li>Privacy</li>
+
+            <li>Compliance</li>
+
+            <li>Least Privilege</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
